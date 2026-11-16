@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hudMatrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05080E" />
+      <stop offset="100%" stop-color="#070C16" />
+    </linearGradient>
+
+    <pattern id="matrixGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00F0FF" stroke-opacity="0.03" stroke-width="1" />
+    </pattern>
+
+    <pattern id="scanlinesSub" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2" x2="100" y2="2" stroke="#00F0FF" stroke-opacity="0.02" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  </style>
+
+  <!-- Container Box with Chamfered Corners -->
+  <polygon points="20,10 1180,10 1190,20 1190,350 1180,360 20,360 10,350 10,20" fill="url(#hudMatrixBg)" stroke="#162E4A" stroke-width="1.5" />
+  <rect x="10" y="10" width="1180" height="350" fill="url(#matrixGrid)" />
+  <rect x="10" y="10" width="1180" height="350" fill="url(#scanlinesSub)" />
+
+  <!-- Corner Calibration Marks -->
+  <path d="M 14 30 L 14 14 L 30 14" fill="none" stroke="#00F0FF" stroke-width="2" />
+  <path d="M 1186 30 L 1186 14 L 1170 14" fill="none" stroke="#00F0FF" stroke-width="2" />
+  <path d="M 14 340 L 14 356 L 30 356" fill="none" stroke="#00F0FF" stroke-width="2" />
+  <path d="M 1186 340 L 1186 356 L 1170 356" fill="none" stroke="#00F0FF" stroke-width="2" />
+
+  <!-- Tactical Header -->
+  <g transform="translate(36, 32)">
+    <rect x="0" y="0" width="8" height="8" fill="#00F0FF" />
+    <text x="16" y="8" fill="#00F0FF" font-size="11" font-weight="800" class="mono" letter-spacing="1.5">TACTICAL LOADOUT // 4 GROUNDED ENGINEERING SUBSYSTEMS</text>
+    <text x="1128" y="8" text-anchor="end" fill="#5F7D9C" font-size="10.5" font-weight="700" class="mono">DIAGNOSTIC: VERIFIED // ZERO FLUFF</text>
+  </g>
+
+  <!-- 2x2 TACTICAL HUD MODULES -->
+
+  <!-- MODULE 01 (Top-Left) -->
+  <g transform="translate(36, 54)">
+    <polygon points="0,0 540,0 550,10 550,138 10,138 0,128" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="138" fill="#00F0FF" />
+
+    <!-- Corner Accents -->
+    <path d="M 536 8 L 544 8 L 544 16" fill="none" stroke="#00F0FF" stroke-width="1" />
+    <text x="18" y="24" fill="#00F0FF" font-size="11.5" font-weight="800" class="mono">[ SUB.01 // FLIGHT &amp; SWARM CONTROL ]</text>
+    <text x="470" y="24" text-anchor="end" fill="#00FF66" font-size="9" font-weight="700" class="mono">LINK: 50Hz LOCK</text>
+
+    <text x="18" y="46" fill="#F1F5F9" font-size="13" font-weight="700" class="mono">ROS 2 Humble · PX4 SITL · MicroXRCE-DDS · C++20</text>
+    <text x="18" y="68" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Hard-real-time 50Hz offboard setpoint dispatch to PX4 flight stack
+    </text>
+    <text x="18" y="86" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Multi-drone Gazebo Harmonic SITL with GPS-denied EKF2 odometry
+    </text>
+
+    <!-- Tactical Pill Tags -->
+    <g transform="translate(18, 104)">
+      <rect x="0" y="0" width="65" height="18" fill="#0C2038" stroke="#00F0FF" stroke-width="0.8" />
+      <text x="32" y="13" text-anchor="middle" fill="#00F0FF" font-size="9" font-weight="700" class="mono">ROS 2</text>
+
+      <rect x="73" y="0" width="55" height="18" fill="#0C2038" stroke="#00F0FF" stroke-width="0.8" />
+      <text x="100" y="13" text-anchor="middle" fill="#00F0FF" font-size="9" font-weight="700" class="mono">PX4</text>
+
+      <rect x="136" y="0" width="70" height="18" fill="#0C2038" stroke="#00F0FF" stroke-width="0.8" />
+      <text x="171" y="13" text-anchor="middle" fill="#00F0FF" font-size="9" font-weight="700" class="mono">GAZEBO</text>
+
+      <rect x="214" y="0" width="90" height="18" fill="#0C2038" stroke="#00F0FF" stroke-width="0.8" />
+      <text x="259" y="13" text-anchor="middle" fill="#00F0FF" font-size="9" font-weight="700" class="mono">MICROXRCE</text>
+
+      <rect x="312" y="0" width="55" height="18" fill="#0C2038" stroke="#00F0FF" stroke-width="0.8" />
+      <text x="339" y="13" text-anchor="middle" fill="#00F0FF" font-size="9" font-weight="700" class="mono">C++20</text>
+    </g>
+  </g>
+
+  <!-- MODULE 02 (Top-Right) -->
+  <g transform="translate(614, 54)">
+    <polygon points="0,0 540,0 550,10 550,138 10,138 0,128" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="138" fill="#0866FF" />
+
+    <!-- Corner Accents -->
+    <path d="M 536 8 L 544 8 L 544 16" fill="none" stroke="#0866FF" stroke-width="1" />
+    <text x="18" y="24" fill="#38BDF8" font-size="11.5" font-weight="800" class="mono">[ SUB.02 // COGNITIVE AGENT RUNTIMES ]</text>
+    <text x="470" y="24" text-anchor="end" fill="#00C2FF" font-size="9" font-weight="700" class="mono">FASTMCP: ACTIVE</text>
+
+    <text x="18" y="46" fill="#F1F5F9" font-size="13" font-weight="700" class="mono">FastMCP Protocol · Python 3.12 · Deterministic Loops</text>
+    <text x="18" y="68" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Real tool calling via FastMCP protocols, zero speculative hallucinations
+    </text>
+    <text x="18" y="86" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Deterministic verification gates, multi-agent consensus scoring (SIFT)
+    </text>
+
+    <!-- Tactical Pill Tags -->
+    <g transform="translate(18, 104)">
+      <rect x="0" y="0" width="75" height="18" fill="#0B1C33" stroke="#0866FF" stroke-width="0.8" />
+      <text x="37" y="13" text-anchor="middle" fill="#38BDF8" font-size="9" font-weight="700" class="mono">FASTMCP</text>
+
+      <rect x="83" y="0" width="85" height="18" fill="#0B1C33" stroke="#0866FF" stroke-width="0.8" />
+      <text x="125" y="13" text-anchor="middle" fill="#38BDF8" font-size="9" font-weight="700" class="mono">MULTI-AGENT</text>
+
+      <rect x="176" y="0" width="65" height="18" fill="#0B1C33" stroke="#0866FF" stroke-width="0.8" />
+      <text x="208" y="13" text-anchor="middle" fill="#38BDF8" font-size="9" font-weight="700" class="mono">PYTHON</text>
+
+      <rect x="249" y="0" width="75" height="18" fill="#0B1C33" stroke="#0866FF" stroke-width="0.8" />
+      <text x="286" y="13" text-anchor="middle" fill="#38BDF8" font-size="9" font-weight="700" class="mono">PYDANTIC</text>
+
+      <rect x="332" y="0" width="65" height="18" fill="#0B1C33" stroke="#0866FF" stroke-width="0.8" />
+      <text x="364" y="13" text-anchor="middle" fill="#38BDF8" font-size="9" font-weight="700" class="mono">RAG/KG</text>
+    </g>
+  </g>
+
+  <!-- MODULE 03 (Bottom-Left) -->
+  <g transform="translate(36, 206)">
+    <polygon points="0,0 540,0 550,10 550,138 10,138 0,128" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="138" fill="#00FF66" />
+
+    <!-- Corner Accents -->
+    <path d="M 536 8 L 544 8 L 544 16" fill="none" stroke="#00FF66" stroke-width="1" />
+    <text x="18" y="24" fill="#00FF66" font-size="11.5" font-weight="800" class="mono">[ SUB.03 // TENSOR ACCELERATION &amp; EDGE ]</text>
+    <text x="470" y="24" text-anchor="end" fill="#00FF66" font-size="9" font-weight="700" class="mono">CUDA: OPTIMAL</text>
+
+    <text x="18" y="46" fill="#F1F5F9" font-size="13" font-weight="700" class="mono">NVIDIA CUDA C++ · TensorRT INT8 · Jetson Orin</text>
+    <text x="18" y="68" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Low-latency CUDA tensor kernels &amp; INT8/FP16 post-training quantization
+    </text>
+    <text x="18" y="86" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Edge robotics inference deployment on NVIDIA Jetson Orin Nano
+    </text>
+
+    <!-- Tactical Pill Tags -->
+    <g transform="translate(18, 104)">
+      <rect x="0" y="0" width="55" height="18" fill="#0A2216" stroke="#00FF66" stroke-width="0.8" />
+      <text x="27" y="13" text-anchor="middle" fill="#00FF66" font-size="9" font-weight="700" class="mono">CUDA</text>
+
+      <rect x="63" y="0" width="80" height="18" fill="#0A2216" stroke="#00FF66" stroke-width="0.8" />
+      <text x="103" y="13" text-anchor="middle" fill="#00FF66" font-size="9" font-weight="700" class="mono">TENSORRT</text>
+
+      <rect x="151" y="0" width="70" height="18" fill="#0A2216" stroke="#00FF66" stroke-width="0.8" />
+      <text x="186" y="13" text-anchor="middle" fill="#00FF66" font-size="9" font-weight="700" class="mono">PYTORCH</text>
+
+      <rect x="229" y="0" width="85" height="18" fill="#0A2216" stroke="#00FF66" stroke-width="0.8" />
+      <text x="271" y="13" text-anchor="middle" fill="#00FF66" font-size="9" font-weight="700" class="mono">JETSON ORIN</text>
+
+      <rect x="322" y="0" width="60" height="18" fill="#0A2216" stroke="#00FF66" stroke-width="0.8" />
+      <text x="352" y="13" text-anchor="middle" fill="#00FF66" font-size="9" font-weight="700" class="mono">OPENCV</text>
+    </g>
+  </g>
+
+  <!-- MODULE 04 (Bottom-Right) -->
+  <g transform="translate(614, 206)">
+    <polygon points="0,0 540,0 550,10 550,138 10,138 0,128" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="138" fill="#FFB800" />
+
+    <!-- Corner Accents -->
+    <path d="M 536 8 L 544 8 L 544 16" fill="none" stroke="#FFB800" stroke-width="1" />
+    <text x="18" y="24" fill="#FFB800" font-size="11.5" font-weight="800" class="mono">[ SUB.04 // LOW-LEVEL HOST &amp; PTY INTERFACES ]</text>
+    <text x="470" y="24" text-anchor="end" fill="#FFB800" font-size="9" font-weight="700" class="mono">I/O: SUB-MS</text>
+
+    <text x="18" y="46" fill="#F1F5F9" font-size="13" font-weight="700" class="mono">Real Linux PTY · Docker Sandboxes · Next.js 14</text>
+    <text x="18" y="68" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • True PTY terminal virtualizers with sub-millisecond execution loop
+    </text>
+    <text x="18" y="86" fill="#8FAECB" font-size="11" font-weight="500" class="mono">
+      • Isolated sandboxed runtimes (Sovereign Arena) and Linux daemons
+    </text>
+
+    <!-- Tactical Pill Tags -->
+    <g transform="translate(18, 104)">
+      <rect x="0" y="0" width="70" height="18" fill="#241B07" stroke="#FFB800" stroke-width="0.8" />
+      <text x="35" y="13" text-anchor="middle" fill="#FFB800" font-size="9" font-weight="700" class="mono">REAL PTY</text>
+
+      <rect x="78" y="0" width="65" height="18" fill="#241B07" stroke="#FFB800" stroke-width="0.8" />
+      <text x="110" y="13" text-anchor="middle" fill="#FFB800" font-size="9" font-weight="700" class="mono">DOCKER</text>
+
+      <rect x="151" y="0" width="55" height="18" fill="#241B07" stroke="#FFB800" stroke-width="0.8" />
+      <text x="178" y="13" text-anchor="middle" fill="#FFB800" font-size="9" font-weight="700" class="mono">LINUX</text>
+
+      <rect x="214" y="0" width="65" height="18" fill="#241B07" stroke="#FFB800" stroke-width="0.8" />
+      <text x="246" y="13" text-anchor="middle" fill="#FFB800" font-size="9" font-weight="700" class="mono">NEXT.JS</text>
+
+      <rect x="287" y="0" width="65" height="18" fill="#241B07" stroke="#FFB800" stroke-width="0.8" />
+      <text x="319" y="13" text-anchor="middle" fill="#FFB800" font-size="9" font-weight="700" class="mono">FASTAPI</text>
+    </g>
+  </g>
+</svg>

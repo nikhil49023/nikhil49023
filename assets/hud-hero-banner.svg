@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Tactical HUD Gradients -->
+    <linearGradient id="hudBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05080E" />
+      <stop offset="50%" stop-color="#080D15" />
+      <stop offset="100%" stop-color="#04060A" />
+    </linearGradient>
+
+    <linearGradient id="hudCyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0866FF" />
+    </linearGradient>
+
+    <linearGradient id="hudAmberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFB800" />
+      <stop offset="100%" stop-color="#FF5500" />
+    </linearGradient>
+
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2" x2="100" y2="2" stroke="#00F0FF" stroke-opacity="0.025" stroke-width="1" />
+    </pattern>
+
+    <!-- HUD Grid -->
+    <pattern id="hudGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00C2FF" stroke-opacity="0.035" stroke-width="1" />
+      <circle cx="0" cy="0" r="1.5" fill="#00F0FF" fill-opacity="0.2" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="hudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+    
+    .hud-blink { animation: blink 2s steps(1) infinite; }
+  </style>
+
+  <!-- Background Base -->
+  <rect x="0" y="0" width="1200" height="360" fill="url(#hudBg)" />
+  <rect x="0" y="0" width="1200" height="360" fill="url(#hudGrid)" />
+  <rect x="0" y="0" width="1200" height="360" fill="url(#scanlines)" />
+
+  <!-- Outer HUD Tactical Frame (Angled Chamfered Corners) -->
+  <polygon points="
+    25,12 1175,12 1188,25 1188,335 1175,348 25,348 12,335 12,25
+  " fill="none" stroke="#16263D" stroke-width="1.5" />
+
+  <polygon points="
+    35,22 1165,22 1178,35 1178,325 1165,338 35,338 22,325 22,35
+  " fill="none" stroke="#00F0FF" stroke-opacity="0.15" stroke-width="1" />
+
+  <!-- Corner Brackets (Targeting Reticles) -->
+  <!-- Top-Left -->
+  <path d="M 16 45 L 16 20 L 45 20" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#hudGlow)" />
+  <circle cx="16" cy="20" r="2.5" fill="#00F0FF" />
+  
+  <!-- Top-Right -->
+  <path d="M 1184 45 L 1184 20 L 1155 20" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#hudGlow)" />
+  <circle cx="1184" cy="20" r="2.5" fill="#00F0FF" />
+
+  <!-- Bottom-Left -->
+  <path d="M 16 315 L 16 340 L 45 340" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#hudGlow)" />
+  <circle cx="16" cy="340" r="2.5" fill="#00F0FF" />
+
+  <!-- Bottom-Right -->
+  <path d="M 1184 315 L 1184 340 L 1155 340" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#hudGlow)" />
+  <circle cx="1184" cy="340" r="2.5" fill="#00F0FF" />
+
+  <!-- ================= TOP HUD HEADING & COMPASS ================= -->
+  <g transform="translate(0, 32)">
+    <!-- Top Left System Tag -->
+    <rect x="42" y="2" width="130" height="20" fill="#0A1828" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1" />
+    <text x="50" y="16" fill="#00F0FF" font-size="10" font-weight="700" class="mono" letter-spacing="1">HUD.OS // NX-49023</text>
+
+    <!-- Compass Tape in Center -->
+    <g transform="translate(410, 0)">
+      <rect x="0" y="0" width="380" height="22" fill="#060C16" stroke="#16263D" stroke-width="1" />
+      <!-- Center pointer -->
+      <polygon points="190,0 186,5 194,5" fill="#00F0FF" />
+      <polygon points="190,22 186,17 194,17" fill="#00F0FF" />
+      <!-- Compass markings -->
+      <text x="190" y="15" text-anchor="middle" fill="#00F0FF" font-size="10.5" font-weight="800" class="mono" letter-spacing="0.5">[ HDG: 042° NNE ]</text>
+      <text x="40" y="15" text-anchor="middle" fill="#4B6A8A" font-size="9" font-weight="600" class="mono">010°</text>
+      <text x="95" y="15" text-anchor="middle" fill="#4B6A8A" font-size="9" font-weight="600" class="mono">025°</text>
+      <text x="285" y="15" text-anchor="middle" fill="#4B6A8A" font-size="9" font-weight="600" class="mono">060°</text>
+      <text x="340" y="15" text-anchor="middle" fill="#4B6A8A" font-size="9" font-weight="600" class="mono">075°</text>
+    </g>
+
+    <!-- Top Right Telemetry Status -->
+    <g transform="translate(1010, 2)">
+      <circle cx="6" cy="10" r="4" fill="#00FF66" class="hud-blink" />
+      <text x="18" y="14" fill="#A0C4DF" font-size="10" font-weight="700" class="mono" letter-spacing="0.5">SYS_LOCK: 50Hz // EKF2: OK</text>
+    </g>
+  </g>
+
+  <!-- Horizontal Divider with Calibrations -->
+  <line x1="42" y1="68" x2="1158" y2="68" stroke="#16263D" stroke-width="1.2" />
+  <line x1="42" y1="66" x2="52" y2="66" stroke="#00F0FF" stroke-width="2" />
+  <line x1="1148" y1="66" x2="1158" y2="66" stroke="#00F0FF" stroke-width="2" />
+  <line x1="600" y1="64" x2="600" y2="72" stroke="#00F0FF" stroke-width="1.5" />
+
+  <!-- ================= MAIN CALLSIGN & HUD RETICLE ================= -->
+  <g transform="translate(48, 105)">
+    <!-- Small HUD Callout Header -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="10" height="10" fill="#00F0FF" />
+      <text x="18" y="9" fill="#00F0FF" font-size="10.5" font-weight="700" class="mono" letter-spacing="1.5">OPERATIONAL CALLSIGN // GROUNDED HARDWARE &amp; CODE</text>
+    </g>
+
+    <!-- Callsign Main Name -->
+    <text x="0" y="52" fill="#FFFFFF" font-size="44" font-weight="900" class="mono" letter-spacing="1">
+      KILANI SAI NIKHIL
+    </text>
+
+    <!-- Target Designation Specs -->
+    <g transform="translate(0, 78)">
+      <text x="0" y="0" fill="#00F0FF" font-size="13" font-weight="700" class="mono" letter-spacing="1">
+        ROLE: <tspan fill="#E2E8F0">SYSTEMS &amp; ROBOTICS ENGINEER</tspan> // DOMAIN: <tspan fill="#E2E8F0">PHYSICAL AI · MULTI-AGENT</tspan>
+      </text>
+      <text x="0" y="24" fill="#64829E" font-size="12" font-weight="500" class="mono">
+        GROUNDED IN LOW-LEVEL RUNTIMES · DETERMINISTIC 50Hz OFFBOARD CONTROLS · REAL-TIME C++20 &amp; CUDA
+      </text>
+    </g>
+  </g>
+
+  <!-- Central HUD Reticle Graphic (Right Side) -->
+  <g transform="translate(980, 160)">
+    <!-- Outer Reticle Ring -->
+    <circle cx="0" cy="0" r="54" fill="none" stroke="#162E4A" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="54" fill="none" stroke="#00F0FF" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="14 10" />
+    
+    <!-- Inner Crosshair Reticle -->
+    <circle cx="0" cy="0" r="32" fill="#0A1828" fill-opacity="0.6" stroke="#00F0FF" stroke-width="1" />
+    <circle cx="0" cy="0" r="4" fill="#00F0FF" />
+    
+    <!-- Reticle Ticks -->
+    <line x1="-62" y1="0" x2="-44" y2="0" stroke="#00F0FF" stroke-width="1.5" />
+    <line x1="44" y1="0" x2="62" y2="0" stroke="#00F0FF" stroke-width="1.5" />
+    <line x1="0" y1="-62" x2="0" y2="-44" stroke="#00F0FF" stroke-width="1.5" />
+    <line x1="0" y1="44" x2="0" y2="62" stroke="#00F0FF" stroke-width="1.5" />
+
+    <!-- Corner Brackets around Reticle -->
+    <path d="M -70 -50 L -70 -70 L -50 -70" fill="none" stroke="#1E3A5F" stroke-width="1.2" />
+    <path d="M 70 -50 L 70 -70 L 50 -70" fill="none" stroke="#1E3A5F" stroke-width="1.2" />
+    <path d="M -70 50 L -70 70 L -50 70" fill="none" stroke="#1E3A5F" stroke-width="1.2" />
+    <path d="M 70 50 L 70 70 L 50 70" fill="none" stroke="#1E3A5F" stroke-width="1.2" />
+
+    <!-- Reticle Telemetry Readouts -->
+    <text x="0" y="86" text-anchor="middle" fill="#00F0FF" font-size="9" font-weight="700" class="mono" letter-spacing="1">TARGET: OPTIMAL</text>
+    <text x="0" y="100" text-anchor="middle" fill="#5F7D9C" font-size="8.5" font-weight="600" class="mono">RNG: 50.0m // ELV: +00°</text>
+  </g>
+
+  <!-- ================= 4 TACTICAL HUD MODULE PODS ================= -->
+  <g transform="translate(42, 266)">
+    <!-- POD 1 -->
+    <g transform="translate(0, 0)">
+      <polygon points="0,0 260,0 268,8 268,60 8,60 0,52" fill="#08101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="60" fill="#00F0FF" />
+      <text x="14" y="20" fill="#00F0FF" font-size="9.5" font-weight="800" class="mono" letter-spacing="1">[ SYS.01 // FLIGHT AUTONOMY ]</text>
+      <text x="14" y="38" fill="#F1F5F9" font-size="11.5" font-weight="700" class="mono">PX4 SITL · ROS 2 · 50Hz</text>
+      <text x="14" y="52" fill="#5A7999" font-size="9" font-weight="500" class="mono">STATUS: DETERMINISTIC LINK</text>
+    </g>
+
+    <!-- POD 2 -->
+    <g transform="translate(282, 0)">
+      <polygon points="0,0 260,0 268,8 268,60 8,60 0,52" fill="#08101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="60" fill="#0866FF" />
+      <text x="14" y="20" fill="#38BDF8" font-size="9.5" font-weight="800" class="mono" letter-spacing="1">[ SYS.02 // COGNITIVE RUNTIMES ]</text>
+      <text x="14" y="38" fill="#F1F5F9" font-size="11.5" font-weight="700" class="mono">FastMCP · Multi-Agent Loops</text>
+      <text x="14" y="52" fill="#5A7999" font-size="9" font-weight="500" class="mono">STATUS: ZERO SPECULATIVE FLUFF</text>
+    </g>
+
+    <!-- POD 3 -->
+    <g transform="translate(564, 0)">
+      <polygon points="0,0 260,0 268,8 268,60 8,60 0,52" fill="#08101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="60" fill="#00FF66" />
+      <text x="14" y="20" fill="#00FF66" font-size="9.5" font-weight="800" class="mono" letter-spacing="1">[ SYS.03 // TENSOR ACCELERATION ]</text>
+      <text x="14" y="38" fill="#F1F5F9" font-size="11.5" font-weight="700" class="mono">CUDA C++ · TensorRT · INT8</text>
+      <text x="14" y="52" fill="#5A7999" font-size="9" font-weight="500" class="mono">STATUS: ORIN EDGE READY</text>
+    </g>
+
+    <!-- POD 4 -->
+    <g transform="translate(846, 0)">
+      <polygon points="0,0 260,0 268,8 268,60 8,60 0,52" fill="#08101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="60" fill="#FFB800" />
+      <text x="14" y="20" fill="#FFB800" font-size="9.5" font-weight="800" class="mono" letter-spacing="1">[ SYS.04 // LOW-LEVEL HOST ]</text>
+      <text x="14" y="38" fill="#F1F5F9" font-size="11.5" font-weight="700" class="mono">Real PTY · Linux Daemons</text>
+      <text x="14" y="52" fill="#5A7999" font-size="9" font-weight="500" class="mono">STATUS: SUB-MS I/O</text>
+    </g>
+  </g>
+</svg>

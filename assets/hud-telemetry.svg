@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 230" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hudTelemBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05080E" />
+      <stop offset="100%" stop-color="#070C16" />
+    </linearGradient>
+
+    <pattern id="telemGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00F0FF" stroke-opacity="0.03" stroke-width="1" />
+    </pattern>
+
+    <pattern id="scanlinesTelem" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2" x2="100" y2="2" stroke="#00F0FF" stroke-opacity="0.02" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  </style>
+
+  <!-- Container Box with Chamfered Corners -->
+  <polygon points="20,10 1180,10 1190,20 1190,210 1180,220 20,220 10,210 10,20" fill="url(#hudTelemBg)" stroke="#162E4A" stroke-width="1.5" />
+  <rect x="10" y="10" width="1180" height="210" fill="url(#telemGrid)" />
+  <rect x="10" y="10" width="1180" height="210" fill="url(#scanlinesTelem)" />
+
+  <!-- Corner Calibration Marks -->
+  <path d="M 14 30 L 14 14 L 30 14" fill="none" stroke="#00F0FF" stroke-width="2" />
+  <path d="M 1186 30 L 1186 14 L 1170 14" fill="none" stroke="#00F0FF" stroke-width="2" />
+  <path d="M 14 200 L 14 216 L 30 216" fill="none" stroke="#00F0FF" stroke-width="2" />
+  <path d="M 1186 200 L 1186 216 L 1170 216" fill="none" stroke="#00F0FF" stroke-width="2" />
+
+  <!-- Section Header -->
+  <g transform="translate(36, 30)">
+    <rect x="0" y="0" width="8" height="8" fill="#00F0FF" />
+    <text x="16" y="8" fill="#00F0FF" font-size="11" font-weight="800" class="mono" letter-spacing="1.5">LIVE SENSOR TELEMETRY // GROUNDED GITHUB ACTIVITY LOG</text>
+    <text x="1128" y="8" text-anchor="end" fill="#5F7D9C" font-size="10" font-weight="700" class="mono">FEED: VERIFIED GRAPHQL</text>
+  </g>
+
+  <!-- 4 HUD SENSOR BLOCKS -->
+  <g transform="translate(36, 52)">
+    <!-- BLOCK 1 -->
+    <g transform="translate(0, 0)">
+      <polygon points="0,0 260,0 268,8 268,88 8,88 0,80" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="88" fill="#00F0FF" />
+      <text x="16" y="20" fill="#5F7D9C" font-size="9" font-weight="700" class="mono">[ SENSOR.01 // CODE EVENTS ]</text>
+      <text x="16" y="54" fill="#FFFFFF" font-size="30" font-weight="900" class="mono">1,319<tspan font-size="18" fill="#00F0FF">+</tspan></text>
+      <text x="16" y="74" fill="#8FAECB" font-size="10" font-weight="600" class="mono">LIFETIME CONTRIBUTIONS</text>
+    </g>
+
+    <!-- BLOCK 2 -->
+    <g transform="translate(282, 0)">
+      <polygon points="0,0 260,0 268,8 268,88 8,88 0,80" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="88" fill="#0866FF" />
+      <text x="16" y="20" fill="#5F7D9C" font-size="9" font-weight="700" class="mono">[ SENSOR.02 // PRODUCTION COMMITS ]</text>
+      <text x="16" y="54" fill="#FFFFFF" font-size="30" font-weight="900" class="mono">990<tspan font-size="18" fill="#0866FF">+</tspan></text>
+      <text x="16" y="74" fill="#8FAECB" font-size="10" font-weight="600" class="mono">VERIFIED REPO COMMITS</text>
+    </g>
+
+    <!-- BLOCK 3 -->
+    <g transform="translate(564, 0)">
+      <polygon points="0,0 260,0 268,8 268,88 8,88 0,80" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="88" fill="#00FF66" />
+      <text x="16" y="20" fill="#5F7D9C" font-size="9" font-weight="700" class="mono">[ SENSOR.03 // LABS &amp; REPOSITORIES ]</text>
+      <text x="16" y="54" fill="#FFFFFF" font-size="30" font-weight="900" class="mono">35<tspan font-size="16" fill="#00FF66"> LABS</tspan></text>
+      <text x="16" y="74" fill="#8FAECB" font-size="10" font-weight="600" class="mono">16 PUBLIC ARCHITECTURES</text>
+    </g>
+
+    <!-- BLOCK 4 -->
+    <g transform="translate(846, 0)">
+      <polygon points="0,0 260,0 268,8 268,88 8,88 0,80" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+      <rect x="0" y="0" width="3" height="88" fill="#FFB800" />
+      <text x="16" y="20" fill="#5F7D9C" font-size="9" font-weight="700" class="mono">[ SENSOR.04 // OFFBOARD LOOP ]</text>
+      <text x="16" y="54" fill="#FFFFFF" font-size="30" font-weight="900" class="mono">50<tspan font-size="16" fill="#FFB800"> Hz</tspan></text>
+      <text x="16" y="74" fill="#8FAECB" font-size="10" font-weight="600" class="mono">DETERMINISTIC RATE LOCK</text>
+    </g>
+  </g>
+
+  <!-- Segmented LED Loadout Bar -->
+  <g transform="translate(36, 162)">
+    <text x="0" y="10" fill="#5F7D9C" font-size="10" font-weight="700" class="mono">ENGINEERING LOADOUT RATIO:</text>
+    
+    <g transform="translate(196, 0)">
+      <rect x="0" y="0" width="932" height="12" fill="#07101C" stroke="#162E4A" stroke-width="1" />
+      <!-- Segment 1: Robotics 40% (372px) -->
+      <rect x="2" y="2" width="370" height="8" fill="#00F0FF" />
+      <!-- Segment 2: Multi-Agent 30% (278px) -->
+      <rect x="374" y="2" width="278" height="8" fill="#0866FF" />
+      <!-- Segment 3: CUDA 20% (186px) -->
+      <rect x="654" y="2" width="186" height="8" fill="#00FF66" />
+      <!-- Segment 4: Low-level Infra 10% (90px) -->
+      <rect x="842" y="2" width="88" height="8" fill="#FFB800" />
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(196, 32)">
+      <rect x="0" y="0" width="6" height="6" fill="#00F0FF" />
+      <text x="12" y="7" fill="#8FAECB" font-size="10" font-weight="600" class="mono">Robotics/UAVs (40%)</text>
+
+      <rect x="230" y="0" width="6" height="6" fill="#0866FF" />
+      <text x="242" y="7" fill="#8FAECB" font-size="10" font-weight="600" class="mono">Multi-Agent/MCP (30%)</text>
+
+      <rect x="460" y="0" width="6" height="6" fill="#00FF66" />
+      <text x="472" y="7" fill="#8FAECB" font-size="10" font-weight="600" class="mono">CUDA/Acceleration (20%)</text>
+
+      <rect x="680" y="0" width="6" height="6" fill="#FFB800" />
+      <text x="692" y="7" fill="#8FAECB" font-size="10" font-weight="600" class="mono">Linux/Host Systems (10%)</text>
+    </g>
+  </g>
+</svg>
