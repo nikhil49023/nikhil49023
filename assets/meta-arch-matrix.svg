@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="100%" height="100%">
+  <defs>
+    <linearGradient id="matrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070A12" />
+      <stop offset="100%" stop-color="#0A0F1D" />
+    </linearGradient>
+
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1424" />
+      <stop offset="100%" stop-color="#0A101C" />
+    </linearGradient>
+
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="50%" stop-color="#0866FF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <linearGradient id="metaBlueCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0064E0" />
+      <stop offset="50%" stop-color="#0866FF" />
+      <stop offset="100%" stop-color="#00C2FF" />
+    </linearGradient>
+
+    <pattern id="cardGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#FFFFFF" stroke-opacity="0.02" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .card-title { font-size: 14px; font-weight: 700; fill: #F1F5F9; }
+    .card-sub { font-size: 11px; font-weight: 600; fill: #38BDF8; }
+    .card-desc { font-size: 12px; font-weight: 400; fill: #94A3B8; }
+    .pill-text { font-size: 10px; font-weight: 600; fill: #BAE6FD; }
+  </style>
+
+  <!-- Container -->
+  <rect x="2" y="2" width="1196" height="366" rx="16" fill="url(#matrixBg)" stroke="#1E293B" stroke-width="1.2" />
+
+  <!-- Grid Overlay -->
+  <rect x="2" y="2" width="1196" height="366" rx="16" fill="url(#cardGrid)" />
+
+  <!-- Section Header -->
+  <g transform="translate(36, 32)">
+    <circle cx="6" cy="6" r="4" fill="#0866FF" />
+    <text x="18" y="10" fill="#38BDF8" font-size="11" font-weight="700" class="mono" letter-spacing="1">SYSTEM ARCHITECTURE // CORE ENGINEERING CAPABILITIES</text>
+    <text x="1128" y="10" text-anchor="end" fill="#64748B" font-size="11" font-weight="500" class="mono">STATUS: 4 SUBSYSTEMS MAPPED</text>
+  </g>
+
+  <!-- 2x2 GRID -->
+
+  <!-- CARD 1 (Top Left) -->
+  <g transform="translate(36, 56)">
+    <rect x="0" y="0" width="550" height="136" rx="12" fill="url(#cardBg)" stroke="url(#cardBorder)" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="136" rx="2" fill="#0866FF" />
+    
+    <text x="24" y="28" class="sans card-title">01 / PHYSICAL AI &amp; AUTONOMOUS ROBOTICS</text>
+    <text x="24" y="46" class="mono card-sub">50Hz DETERMINISTIC OFFBOARD · PX4 SITL · ROS 2</text>
+    
+    <text x="24" y="72" class="sans card-desc">
+      Multi-UAV swarm orchestration with MicroXRCE-DDS middleware, Gazebo Harmonic
+    </text>
+    <text x="24" y="90" class="sans card-desc">
+      physics simulation, and GPS-denied EKF2 odometry fusion for high-precision flight.
+    </text>
+
+    <!-- Pills -->
+    <g transform="translate(24, 104)">
+      <rect x="0" y="0" width="60" height="20" rx="6" fill="#0D2144" stroke="#0866FF" stroke-width="0.8" />
+      <text x="30" y="14" text-anchor="middle" class="mono pill-text">ROS 2</text>
+
+      <rect x="68" y="0" width="56" height="20" rx="6" fill="#0D2144" stroke="#0866FF" stroke-width="0.8" />
+      <text x="96" y="14" text-anchor="middle" class="mono pill-text">PX4</text>
+
+      <rect x="132" y="0" width="70" height="20" rx="6" fill="#0D2144" stroke="#0866FF" stroke-width="0.8" />
+      <text x="167" y="14" text-anchor="middle" class="mono pill-text">GAZEBO</text>
+
+      <rect x="210" y="0" width="94" height="20" rx="6" fill="#0D2144" stroke="#0866FF" stroke-width="0.8" />
+      <text x="257" y="14" text-anchor="middle" class="mono pill-text">MICROXRCE</text>
+
+      <rect x="312" y="0" width="54" height="20" rx="6" fill="#0D2144" stroke="#0866FF" stroke-width="0.8" />
+      <text x="339" y="14" text-anchor="middle" class="mono pill-text">C++20</text>
+    </g>
+  </g>
+
+  <!-- CARD 2 (Top Right) -->
+  <g transform="translate(614, 56)">
+    <rect x="0" y="0" width="550" height="136" rx="12" fill="url(#cardBg)" stroke="url(#cardBorder)" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="136" rx="2" fill="#00C2FF" />
+    
+    <text x="24" y="28" class="sans card-title">02 / COGNITIVE MULTI-AGENT RUNTIMES</text>
+    <text x="24" y="46" class="mono card-sub" fill="#00C2FF">FASTMCP PROTOCOL · VERIFICATION LOOPS · AUTONOMY</text>
+    
+    <text x="24" y="72" class="sans card-desc">
+      Autonomous task decomposition, agentic tool routing with FastMCP servers,
+    </text>
+    <text x="24" y="90" class="sans card-desc">
+      deterministic verification gates, and consensus scoring algorithms (SIFT &amp; Saara).
+    </text>
+
+    <!-- Pills -->
+    <g transform="translate(24, 104)">
+      <rect x="0" y="0" width="74" height="20" rx="6" fill="#082A40" stroke="#00C2FF" stroke-width="0.8" />
+      <text x="37" y="14" text-anchor="middle" class="mono pill-text" fill="#7DD3FC">FASTMCP</text>
+
+      <rect x="82" y="0" width="86" height="20" rx="6" fill="#082A40" stroke="#00C2FF" stroke-width="0.8" />
+      <text x="125" y="14" text-anchor="middle" class="mono pill-text" fill="#7DD3FC">MULTI-AGENT</text>
+
+      <rect x="176" y="0" width="68" height="20" rx="6" fill="#082A40" stroke="#00C2FF" stroke-width="0.8" />
+      <text x="210" y="14" text-anchor="middle" class="mono pill-text" fill="#7DD3FC">PYTHON</text>
+
+      <rect x="252" y="0" width="82" height="20" rx="6" fill="#082A40" stroke="#00C2FF" stroke-width="0.8" />
+      <text x="293" y="14" text-anchor="middle" class="mono pill-text" fill="#7DD3FC">PYDANTIC</text>
+
+      <rect x="342" y="0" width="60" height="20" rx="6" fill="#082A40" stroke="#00C2FF" stroke-width="0.8" />
+      <text x="372" y="14" text-anchor="middle" class="mono pill-text" fill="#7DD3FC">RAG/KG</text>
+    </g>
+  </g>
+
+  <!-- CARD 3 (Bottom Left) -->
+  <g transform="translate(36, 208)">
+    <rect x="0" y="0" width="550" height="136" rx="12" fill="url(#cardBg)" stroke="url(#cardBorder)" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="136" rx="2" fill="#6366F1" />
+    
+    <text x="24" y="28" class="sans card-title">03 / REAL-TIME COMPUTE &amp; ACCELERATION</text>
+    <text x="24" y="46" class="mono card-sub" fill="#818CF8">CUDA KERNELS · TENSORRT PTQ · EDGE EMBEDDED</text>
+    
+    <text x="24" y="72" class="sans card-desc">
+      Low-latency neural tensor pipelines, INT8/FP16 post-training quantization,
+    </text>
+    <text x="24" y="90" class="sans card-desc">
+      NVIDIA Jetson Orin Nano edge execution, and CUDA-accelerated spatial compute.
+    </text>
+
+    <!-- Pills -->
+    <g transform="translate(24, 104)">
+      <rect x="0" y="0" width="60" height="20" rx="6" fill="#1E1E46" stroke="#6366F1" stroke-width="0.8" />
+      <text x="30" y="14" text-anchor="middle" class="mono pill-text" fill="#C7D2FE">CUDA</text>
+
+      <rect x="68" y="0" width="82" height="20" rx="6" fill="#1E1E46" stroke="#6366F1" stroke-width="0.8" />
+      <text x="109" y="14" text-anchor="middle" class="mono pill-text" fill="#C7D2FE">TENSORRT</text>
+
+      <rect x="158" y="0" width="76" height="20" rx="6" fill="#1E1E46" stroke="#6366F1" stroke-width="0.8" />
+      <text x="196" y="14" text-anchor="middle" class="mono pill-text" fill="#C7D2FE">PYTORCH</text>
+
+      <rect x="242" y="0" width="94" height="20" rx="6" fill="#1E1E46" stroke="#6366F1" stroke-width="0.8" />
+      <text x="289" y="14" text-anchor="middle" class="mono pill-text" fill="#C7D2FE">JETSON ORIN</text>
+
+      <rect x="344" y="0" width="62" height="20" rx="6" fill="#1E1E46" stroke="#6366F1" stroke-width="0.8" />
+      <text x="375" y="14" text-anchor="middle" class="mono pill-text" fill="#C7D2FE">OPENCV</text>
+    </g>
+  </g>
+
+  <!-- CARD 4 (Bottom Right) -->
+  <g transform="translate(614, 208)">
+    <rect x="0" y="0" width="550" height="136" rx="12" fill="url(#cardBg)" stroke="url(#cardBorder)" stroke-width="1" />
+    <rect x="0" y="0" width="4" height="136" rx="2" fill="#38BDF8" />
+    
+    <text x="24" y="28" class="sans card-title">04 / SYSTEMS ENGINEERING &amp; DEVELOPER RUNTIMES</text>
+    <text x="24" y="46" class="mono card-sub">REAL PTY EMULATION · LINUX DAEMONS · DOCKER</text>
+    
+    <text x="24" y="72" class="sans card-desc">
+      Interactive sandboxed development cockpits (Sovereign Arena), real PTY virtualizers,
+    </text>
+    <text x="24" y="90" class="sans card-desc">
+      high-efficiency system daemons, containerized build clusters, and local automation.
+    </text>
+
+    <!-- Pills -->
+    <g transform="translate(24, 104)">
+      <rect x="0" y="0" width="76" height="20" rx="6" fill="#0B263B" stroke="#38BDF8" stroke-width="0.8" />
+      <text x="38" y="14" text-anchor="middle" class="mono pill-text">REAL PTY</text>
+
+      <rect x="84" y="0" width="68" height="20" rx="6" fill="#0B263B" stroke="#38BDF8" stroke-width="0.8" />
+      <text x="118" y="14" text-anchor="middle" class="mono pill-text">DOCKER</text>
+
+      <rect x="160" y="0" width="64" height="20" rx="6" fill="#0B263B" stroke="#38BDF8" stroke-width="0.8" />
+      <text x="192" y="14" text-anchor="middle" class="mono pill-text">LINUX</text>
+
+      <rect x="232" y="0" width="74" height="20" rx="6" fill="#0B263B" stroke="#38BDF8" stroke-width="0.8" />
+      <text x="269" y="14" text-anchor="middle" class="mono pill-text">NEXT.JS</text>
+
+      <rect x="314" y="0" width="70" height="20" rx="6" fill="#0B263B" stroke="#38BDF8" stroke-width="0.8" />
+      <text x="349" y="14" text-anchor="middle" class="mono pill-text">FASTAPI</text>
+    </g>
+  </g>
+</svg>
